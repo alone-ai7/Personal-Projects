@@ -43,3 +43,7 @@ A simple Python program that finds the smallest and largest number from user inp
 - Use `>` to find largest, `<` to find smallest
 - Keep variable names consistent inside loops
 
+#in a sentense
+Finds the smallest and largest number from 5 user inputs. Creates a list, asks user for 5 numbers and stores them, sets smallest and largest to the first number,
+loops through all numbers updating smallest if found smaller or largest if found bigger,  then prints both results. Uses variables, lists, loops, and if statements.
+
