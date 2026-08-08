@@ -16,3 +16,30 @@ for number in my_box:
 
 print(f"The smallest number is {smallest}")
 print(f"The largest number is {largest}")
+
+## Find Min-Max
+
+A simple Python program that finds the smallest and largest number from user input.
+
+## What It Does
+
+- Asks the user to enter 5 numbers
+- Stores all numbers in a list
+- Finds the smallest number
+- Finds the largest number
+- Displays both results
+
+## Concepts Used
+
+- **Variables** — storing data
+- **Lists** — collecting multiple items with `.append()`
+- **Loops** — repeating actions with `for`
+- **Conditionals** — making decisions with `if`
+- **Input/Output** — `input()` and `print()`
+
+## Key Learnings
+
+- Use `my_box[0]` to get the first item (don't hardcode values)
+- Use `>` to find largest, `<` to find smallest
+- Keep variable names consistent inside loops
+
