@@ -1,2 +1,2 @@
 # First-Year-College-Projects
-I will put my projects here on my first year in BSIT. 
+I will put my personal projects here on my colleye. 
