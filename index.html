@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Will you be my Valentine? </title>
+	<style>
+		body { text-align: center; background: #fce4ec; font-family: sans-serif; padding-top: 100px; }
+		h1 { color: #d81b60; }
+		.btn { padding: 10px 20px; font-size: 1.2rem; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; min-width: 140px; box-sizing: border-box; }
+		#yesBtn { background: #4caf50; color: white; position: relative; left: -105px; width: 140px; }
+		#noBtn { background: #e53935; color: white; position: absolute; left: 52%; width: 140px; transition: 0.01s; }
+	</style>
+</head>
+
+<body>
+
+<img src="flowercat.gif" width="150" style="display: block; margin: 0 auto 20px auto;">
+<h1 id="question">Will you be my Valentine? </h1>
+
+<button class="btn" id="yesBtn" onclick="sayYes()">Yes</button>
+<button class="btn" id="noBtn" onmouseover="dodge()" ontouchstart="dodge(event)">Think again!</button>
+
+<script>
+	function sayYes() {
+		document.getElementById('question').innerText = "Yay! See you on Valentine";
+		document.getElementById('yesBtn').style.display = 'none';
+		document.getElementById('noBtn').style.display = 'none';
+	}
+	function dodge(e) {
+    if (e) e.preventDefault();
+    const noBtn = document.getElementById('noBtn');
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+    const x = Math.random() * (window.innerWidth - btnWidth);
+    const y = Math.random() * (window.innerHeight - btnHeight);
+    noBtn.style.position = 'fixed';
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+    noBtn.style.transform = 'none';
+}
+	
+</script>
+
+</body>
+</html>
