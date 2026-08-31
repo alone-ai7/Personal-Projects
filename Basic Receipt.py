@@ -3,7 +3,7 @@ store_loc = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tIsabang, Lucena, Quezon"
 
 print(store_name, "\n", store_loc)
 
-
+#item names and prices
 item_name1 = "Water"
 item_price1 = "6.00"
 
@@ -28,3 +28,5 @@ print(item_name5, "=", item_price5)
 total = float(item_price1) + float(item_price2) + float(item_price3) + float(item_price4) + float(item_price5) 
 
 print("\nThe total price is",total)
+
+#same logic as the code_challenge2
