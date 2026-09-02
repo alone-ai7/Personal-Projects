@@ -4,30 +4,25 @@
 	<title>Will you be my Valentines Date? </title>
 	<style>
 		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			min-height: 100vh;
 			background: #fce4ec;
 			font-family: sans-serif;
 			margin: 0;
-			padding: 20px;
+			padding-top: 60px;
+			text-align: center;
 			box-sizing: border-box;
 		}
 
 		h1 { 
 			color: #d81b60; 
-			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
 		}
 		
-		/* Container to keep buttons perfectly aligned initially */
 		.btn-container {
 			display: flex;
 			gap: 20px;
 			justify-content: center;
 			width: 100%;
-			margin-top: 15px;
 			position: relative;
 		}
 
@@ -57,10 +52,9 @@
 
 <body>
 
-<img src="flowercat.gif" width="450" style="display: block; max-width: 100%; height: auto; margin: 0 auto 10px auto;">
+<img src="flowercat.gif" width="450" style="display: inline-block; max-width: 90%; height: auto; margin: 0 auto;">
 <h1 id="question">Will you be my Valentines Date?? </h1>
 
-<!-- Added this container to keep them side-by-side neatly -->
 <div class="btn-container">
 	<button class="btn" id="yesBtn" onclick="sayYes()">Yes</button>
 	<button class="btn" id="noBtn" onmouseover="dodge()" ontouchstart="dodge(event)">No!</button>
@@ -79,7 +73,6 @@
 		const btnWidth = noBtn.offsetWidth;
 		const btnHeight = noBtn.offsetHeight;
 		
-		// Teleport the button safely within the visible window screen
 		const x = Math.random() * (window.innerWidth - btnWidth);
 		const y = Math.random() * (window.innerHeight - btnHeight);
 		
