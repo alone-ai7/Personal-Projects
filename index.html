@@ -1,23 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Will you be my Valentine? </title>
+	<title>Will you be my Valentines Date? </title>
 	<style>
-		body { text-align: center; background: #fce4ec; font-family: sans-serif; padding-top: 100px; }
-		h1 { color: #d81b60; }
-		.btn { padding: 10px 20px; font-size: 1.2rem; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; min-width: 140px; box-sizing: border-box; }
-		#yesBtn { background: #4caf50; color: white; position: relative; left: -105px; width: 140px; }
-		#noBtn { background: #e53935; color: white; position: absolute; left: 52%; width: 140px; transition: 0.1s; }
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			background: #fce4ec;
+			font-family: sans-serif;
+			margin: 0;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		h1 { 
+			color: #d81b60; 
+			text-align: center;
+		}
+		
+		/* Container to keep buttons perfectly aligned initially */
+		.btn-container {
+			display: flex;
+			gap: 20px;
+			justify-content: center;
+			width: 100%;
+			margin-top: 15px;
+			position: relative;
+		}
+
+		.btn { 
+			padding: 10px 20px; 
+			font-size: 1.2rem; 
+			border: none; 
+			border-radius: 5px; 
+			cursor: pointer; 
+			font-weight: bold; 
+			width: 140px; 
+			box-sizing: border-box; 
+		}
+		
+		#yesBtn { 
+			background: #4caf50; 
+			color: white; 
+		}
+		
+		#noBtn { 
+			background: #e53935; 
+			color: white; 
+			transition: 0.1s; 
+		}
 	</style>
 </head>
 
 <body>
 
-<img src="flowercat.gif" width="450" style="display: block; margin: 0 auto 10px auto;">
-<h1 id="question">Will you be my Valentine? </h1>
+<img src="flowercat.gif" width="450" style="display: block; max-width: 100%; height: auto; margin: 0 auto 10px auto;">
+<h1 id="question">Will you be my Valentines Date?? </h1>
 
-<button class="btn" id="yesBtn" onclick="sayYes()">Yes</button>
-<button class="btn" id="noBtn" onmouseover="dodge()" ontouchstart="dodge(event)">No!</button>
+<!-- Added this container to keep them side-by-side neatly -->
+<div class="btn-container">
+	<button class="btn" id="yesBtn" onclick="sayYes()">Yes</button>
+	<button class="btn" id="noBtn" onmouseover="dodge()" ontouchstart="dodge(event)">No!</button>
+</div>
 
 <script>
 	function sayYes() {
@@ -25,19 +72,22 @@
 		document.getElementById('yesBtn').style.display = 'none';
 		document.getElementById('noBtn').style.display = 'none';
 	}
-	function dodge(e) {
-    if (e) e.preventDefault();
-    const noBtn = document.getElementById('noBtn');
-    const btnWidth = noBtn.offsetWidth;
-    const btnHeight = noBtn.offsetHeight;
-    const x = Math.random() * (window.innerWidth - btnWidth);
-    const y = Math.random() * (window.innerHeight - btnHeight);
-    noBtn.style.position = 'fixed';
-    noBtn.style.left = x + 'px';
-    noBtn.style.top = y + 'px';
-    noBtn.style.transform = 'none'; 
-}
 	
+	function dodge(e) {
+		if (e) e.preventDefault();
+		const noBtn = document.getElementById('noBtn');
+		const btnWidth = noBtn.offsetWidth;
+		const btnHeight = noBtn.offsetHeight;
+		
+		// Teleport the button safely within the visible window screen
+		const x = Math.random() * (window.innerWidth - btnWidth);
+		const y = Math.random() * (window.innerHeight - btnHeight);
+		
+		noBtn.style.position = 'fixed';
+		noBtn.style.left = x + 'px';
+		noBtn.style.top = y + 'px';
+		noBtn.style.transform = 'none'; 
+	}
 </script>
 
 </body>
